@@ -1,0 +1,30 @@
+[
+    {
+      "expertiseId": 1,
+      "expertiseName": "Creative Services"
+    },
+    {
+      "expertiseId": 2,
+      "expertiseName": "Product Development"
+    },
+    {
+      "expertiseId": 3,
+      "expertiseName": "Marketing"
+    },
+    {
+      "expertiseId": 4,
+      "expertiseName": "Strategic Planning"
+    },
+    {
+      "expertiseId": 5,
+      "expertiseName": "Accounting"
+    },
+    {
+      "expertiseId": 6,
+      "expertiseName": "Human Resources"
+    },
+    {
+      "expertiseId": 7,
+      "expertiseName": "Quality Analysis"
+    }
+  ]

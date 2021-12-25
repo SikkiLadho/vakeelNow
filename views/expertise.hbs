@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <h2>{{expertise.expertiseName}} -Expertise: {{ expertise.expertiseId}}</h2>
+        <hr />
+        <form method="post" action="/expertise/update">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="expertiseId">Expertise Id</label>
+                    <input class="form-control" id="expertiseId" name="expertiseId" type="text"
+                        value="{{expertise.expertiseId}}" readonly />
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="expertiseName">Expertise Name</label>
+                <input class="form-control" id="expertiseName" name="expertiseName" type="text"
+                    value="{{expertise.expertiseName}}" />
+            </div>
+        </div>
+    </div>
+
+    </fieldset>
+    <hr />
+    <input type="submit" class="btn btn-primary pull-right" value="Update Expertise" /><br /><br /><br />
+    </form>
+</div>
+</div>

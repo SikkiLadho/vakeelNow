@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Post Case</h2>
+           
+            {{#if errorMessage}}
+                <div class="alert alert-danger"> <strong>Error:</strong> {{errorMessage}}</div>
+            {{/if }}
+           
+           {{#if successMessage}}
+                <div class="alert alert-success"> 
+                    <strong>Success:</strong> {{successMessage}}
+                </div>
+            {{/if}}
+            
+            
+            <br />
+
+            <form method="post" action="/cases/add">
+
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="CaseTitle">Case Title:</label>
+                                <input class="form-control" id="caseTitle" name="caseTitle" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="caseText">Case Description:</label>
+                                <textarea class="form-control" id="caseText" name="caseText" type="text-area" > </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="expertise">Case Type</label>   
+                                    {{#if expertises}}
+                                        <select class="form-control" name="expertise" id="expertise">
+                                            {{#each expertises}} 
+                                            <option value={{expertiseName}}>{{expertiseName}}</option>
+                                            {{/each}}
+                                            {{else}}
+                                            <div>No Expertises</div>
+                                            {{/if}}
+                                        </select>
+                            </div>
+                        </div>
+                    </div>             
+                </fieldset>
+
+                <hr />
+
+                <input type="submit" class="btn btn-primary pull-right" value="Post Case" /><br /><br /><br />
+
+            </form>
+        </div>
+    </div>
+</div>

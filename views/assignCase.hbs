@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Post Case</h2>
+           
+            {{#if errorMessage}}
+                <div class="alert alert-danger"> <strong>Error:</strong> {{errorMessage}}</div>
+            {{/if }}
+           
+           {{#if successMessage}}
+                <div class="alert alert-success"> 
+                    <strong>Success:</strong> {{successMessage}}
+                </div>
+            {{/if}}
+            
+            
+            <br />
+
+            <form method="post" action="/assigncase/{{id}}">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="vakeelResponse">Response:</label>
+                                <textarea class="form-control" id="" name="vakeelResponse" type="text-area" > </textarea>
+                            </div>
+                        </div>
+                    </div>           
+                </fieldset>
+
+                <hr />
+
+                <input type="submit" class="btn btn-primary pull-right" value="PostCase" /><br /><br /><br />
+
+            </form>
+        </div>
+    </div>
+</div>

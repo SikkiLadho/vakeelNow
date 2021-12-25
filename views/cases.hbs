@@ -1,0 +1,77 @@
+<div class="row">
+<div class="col-md-12">
+<h2>Cases</h2>
+<hr />
+<fieldset>
+<form method="post" action="/vakeels/search">
+    <div class="row">
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label for="keyword">Keyword</label>
+                        <input class="form-control" id="keyword" name="keyword" type="text" placeholder="Search" required value=""
+                        />
+                </div>
+            </div>
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="filterBy">Filter By</label>
+                <select class="form-control" name="filterBy" id="filterBy">
+                        <option value="caseTitle">Case Title</option>
+                        <option value="caseText">Case Description</option>
+                        <option value="expertise">Expertise</option>
+                </select>
+            </div>
+        </div>
+</div>
+  <div class="row">
+  <div class="col-md-6">
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="search" />
+            </div>
+        </div>
+</div>
+
+</form>
+</fieldset>
+<hr />
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                   <tr>
+                        <th>Case Title</th>
+                        <th>User</th>
+                        <th>Expertise</th>
+                        <th>Status</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each cases}}
+                    <tr>
+                        <td>{{caseTitle}}</td>
+                        <td>{{userName}}</td>
+                        <td>{{expertise}}</a></td>
+                        <td>{{vakeelName}}</td>
+                         {{#if ../session.user.vakeel}}
+                        <td>
+                            <a href="/assigncase/{{_id}}"> <input type="submit"
+                                        class="btn btn-primary btn-success pull-right"
+                                        value="Assign" /></a>
+                            </td>
+
+                            {{/if}}
+                    </tr>
+                    {{else}}
+                    <tr>
+                          <td colspan="5">No Results</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{#unless vakeel}}
+        <div class="col-md-12 text-center"><strong>{{message}}</strong></div>
+    {{/unless}}
+</div>
